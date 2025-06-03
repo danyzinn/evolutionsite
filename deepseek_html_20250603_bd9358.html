@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportStyle - Materiais Esportivos e Tênis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variáveis e Reset */
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --secondary: #ff9800;
+            --dark: #212121;
+            --light: #f5f5f5;
+            --gray: #9e9e9e;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .top-bar {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 8px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .header-icons {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-icons div {
+            margin-left: 20px;
+            cursor: pointer;
+            position: relative;
+            font-size: 1.3rem;
+            color: var(--dark);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background-color: var(--secondary);
+            color: var(--white);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .search-container {
+            display: flex;
+            align-items: center;
+            background-color: var(--light);
+            border-radius: 30px;
+            padding: 8px 15px;
+            width: 300px;
+        }
+        
+        .search-container input {
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 5px;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .search-container i {
+            color: var(--gray);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #e68a00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Categories */
+        .categories {
+            padding: 60px 5%;
+            text-align: center;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+        
+        .categories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .category-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .category-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .category-card:hover .category-img img {
+            transform: scale(1.1);
+        }
+        
+        .category-content {
+            padding: 20px;
+        }
+        
+        .category-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        /* Featured Products */
+        .featured-products {
+            padding: 60px 5%;
+            background-color: var(--light);
+        }
+        
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        .product-img {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img img {
+            max-width: 80%;
+            max-height: 80%;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+        
+        .product-actions {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-actions {
+            transform: translateY(0);
+        }
+        
+        .product-actions button {
+            flex: 1;
+            padding: 12px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        
+        .product-actions button:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            height: 50px;
+            overflow: hidden;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .current-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        .old-price {
+            font-size: 1.1rem;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+        
+        .rating {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 50px 5%;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .promo-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .promo-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .promo-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .timer-item {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 80px;
+        }
+        
+        .timer-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .timer-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        
+        /* Brands */
+        .brands {
+            padding: 60px 5%;
+            text-align: center;
+        }
+        
+        .brands-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .brand-item {
+            opacity: 0.6;
+            transition: var(--transition);
+        }
+        
+        .brand-item:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .brand-item img {
+            height: 50px;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+        
+        .brand-item:hover img {
+            filter: grayscale(0);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding-top: 60px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5% 40px;
+        }
+        
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-col ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: var(--white);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #e68a00;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Shopping Cart */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+            justify-content: flex-end;
+        }
+        
+        .cart-container {
+            background-color: var(--white);
+            width: 100%;
+            max-width: 450px;
+            height: 100%;
+            overflow-y: auto;
+            position: relative;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .cart-overlay.active .cart-container {
+            transform: translateX(0);
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .cart-header h3 {
+            font-size: 1.5rem;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .cart-items {
+            padding: 20px;
+        }
+        
+        .cart-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light);
+        }
+        
+        .cart-item-img {
+            width: 100px;
+            height: 100px;
+            margin-right: 15px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            background-color: var(--light);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid var(--light);
+            margin: 0 5px;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #f44336;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        .cart-summary {
+            padding: 20px;
+            background-color: var(--light);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .summary-total {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--gray);
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .header-container {
+                padding: 15px 3%;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 70vh;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .search-container {
+                width: 200px;
+            }
+            
+            .promo-content h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+            
+            .logo {
+                order: 1;
+            }
+            
+            .header-icons {
+                order: 2;
+            }
+            
+            .search-container {
+                order: 3;
+                margin-top: 15px;
+                width: 100%;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .timer-item {
+                min-width: 60px;
+                padding: 10px;
+            }
+            
+            .timer-value {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <p>FRETE GRÁTIS para compras acima de R$ 299 | Parcele em até 10x sem juros</p>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Sport<span>Style</span></h1>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Tênis</a></li>
+                    <li><a href="#">Roupas</a></li>
+                    <li><a href="#">Acessórios</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-icons">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar produtos...">
+                </div>
+                <div>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>EQUIPE-SE PARA A VITÓRIA</h2>
+            <p>Os melhores tênis, roupas e equipamentos esportivos com até 40% OFF</p>
+            <a href="#" class="btn btn-primary">COMPRAR AGORA</a>
+        </div>
+    </section>
+    
+    <!-- Categories -->
+    <section class="categories">
+        <div class="section-title">
+            <h2>Categorias</h2>
+        </div>
+        
+        <div class="categories-container">
+            <div class="category-card">
+                <div class="category-img">
+                    <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Tênis">
+                </div>
+                <div class="category-content">
+                    <h3>Tênis Esportivos</h3>
+                    <a href="#" class="btn">Ver produtos</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-img">
+                    <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1179&q=80" alt="Roupas">
+                </div>
+                <div class="category-content">
+                    <h3>Roupas Esportivas</h3>
+                    <a href="#" class="btn">Ver produtos</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-img">
+                    <img src="https://images.unsplash.com/photo-1593771083705-8fe652bf2569?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Acessórios">
+                </div>
+                <div class="category-content">
+                    <h3>Acessórios</h3>
+                    <a href="#" class="btn">Ver produtos</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-img">
+                    <img src="https://images.unsplash.com/photo-1549060279-7e168fce7090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Equipamentos">
+                </div>
+                <div class="category-content">
+                    <h3>Equipamentos</h3>
+                    <a href="#" class="btn">Ver produtos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="section-title">
+            <h2>Produtos em Destaque</h2>
+        </div>
+        
+        <div class="products-container">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-badge">-20%</div>
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Tênis Nike Air Max">
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" data-id="1"><i class="fas fa-shopping-cart"></i> Adicionar</button>
+                    <button><i class="fas fa-heart"></i> Favorito</button>
+                    <button><i class="fas fa-eye"></i> Detalhes</button>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Tênis Nike Air Max 270 - Masculino</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(128)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">R$ 499,90</span>
+                        <span class="old-price">R$ 624,90</span>
+                    </div>
+                    <button class="btn add-to-cart" data-id="1">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-badge">Novidade</div>
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="Tênis Adidas Ultraboost">
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" data-id="2"><i class="fas fa-shopping-cart"></i> Adicionar</button>
+                    <button><i class="fas fa-heart"></i> Favorito</button>
+                    <button><i class="fas fa-eye"></i> Detalhes</button>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Tênis Adidas Ultraboost 22 - Feminino</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(96)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">R$ 699,90</span>
+                    </div>
+                    <button class="btn add-to-cart" data-id="2">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-badge">-30%</div>
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=698&q=80" alt="Camiseta Esportiva">
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" data-id="3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
+                    <button><i class="fas fa-heart"></i> Favorito</button>
+                    <button><i class="fas fa-eye"></i> Detalhes</button>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Camiseta Dry-Fit Nike Dri-FIT Academy</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(215)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">R$ 119,90</span>
+                        <span class="old-price">R$ 169,90</span>
+                    </div>
+                    <button class="btn add-to-cart" data-id="3">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-badge">Promoção</div>
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Bola de Basquete">
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" data-id="4"><i class="fas fa-shopping-cart"></i> Adicionar</button>
+                    <button><i class="fas fa-heart"></i> Favorito</button>
+                    <button><i class="fas fa-eye"></i> Detalhes</button>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Bola de Basquete Spalding NBA Official Game</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(87)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">R$ 249,90</span>
+                        <span class="old-price">R$ 349,90</span>
+                    </div>
+                    <button class="btn add-to-cart" data-id="4">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="promo-content">
+            <h2>PROMOÇÃO RELÂMPAGO!</h2>
+            <p>Até 50% de desconto em toda a coleção de verão. Aproveite antes que acabe!</p>
+            
+            <div class="timer">
+                <div class="timer-item">
+                    <div class="timer-value" id="days">02</div>
+                    <div class="timer-label">Dias</div>
+                </div>
+                <div class="timer-item">
+                    <div class="timer-value" id="hours">12</div>
+                    <div class="timer-label">Horas</div>
+                </div>
+                <div class="timer-item">
+                    <div class="timer-value" id="minutes">45</div>
+                    <div class="timer-label">Minutos</div>
+                </div>
+                <div class="timer-item">
+                    <div class="timer-value" id="seconds">30</div>
+                    <div class="timer-label">Segundos</div>
+                </div>
+            </div>
+            
+            <a href="#" class="btn">APROVEITAR OFERTAS</a>
+        </div>
+    </section>
+    
+    <!-- Brands -->
+    <section class="brands">
+        <div class="section-title">
+            <h2>Marcas Parceiras</h2>
+        </div>
+        
+        <div class="brands-container">
+            <div class="brand-item">
+                <img src="https://logodownload.org/wp-content/uploads/2014/04/nike-logo-1-1.png" alt="Nike">
+            </div>
+            <div class="brand-item">
+                <img src="https://logodownload.org/wp-content/uploads/2014/04/adidas-logo-1-1.png" alt="Adidas">
+            </div>
+            <div class="brand-item">
+                <img src="https://logodownload.org/wp-content/uploads/2017/04/puma-logo-1-1.png" alt="Puma">
+            </div>
+            <div class="brand-item">
+                <img src="https://logodownload.org/wp-content/uploads/2019/11/new-balance-logo-1.png" alt="New Balance">
+            </div>
+            <div class="brand-item">
+                <img src="https://logodownload.org/wp-content/uploads/2014/04/under-armour-logo-1.png" alt="Under Armour">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>SportStyle</h3>
+                <p>Sua loja especializada em materiais esportivos e tênis de alta qualidade para todos os esportes.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Nossas Lojas</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Trocas e Devoluções</a></li>
+                    <li><a href="#">Perguntas Frequentes</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Categorias</h3>
+                <ul>
+                    <li><a href="#">Tênis de Corrida</a></li>
+                    <li><a href="#">Tênis de Basquete</a></li>
+                    <li><a href="#">Tênis de Futebol</a></li>
+                    <li><a href="#">Roupas Esportivas</a></li>
+                    <li><a href="#">Equipamentos</a></li>
+                    <li><a href="#">Acessórios</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Inscreva-se para receber nossas promoções e novidades</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+                <p>Formas de Pagamento:</p>
+                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                    <i class="fab fa-cc-visa" style="font-size: 2rem;"></i>
+                    <i class="fab fa-cc-mastercard" style="font-size: 2rem;"></i>
+                    <i class="fab fa-cc-amex" style="font-size: 2rem;"></i>
+                    <i class="fab fa-cc-paypal" style="font-size: 2rem;"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 SportStyle - Todos os direitos reservados. CNPJ: 12.345.678/0001-99</p>
+        </div>
+    </footer>
+    
+    <!-- Shopping Cart -->
+    <div class="cart-overlay">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h3>Seu Carrinho</h3>
+                <button class="close-cart"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="cart-items">
+                <!-- Cart items will be added here dynamically -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">R$ 0,00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Frete:</span>
+                    <span id="shipping">R$ 0,00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Desconto:</span>
+                    <span id="discount">- R$ 0,00</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Total:</span>
+                    <span id="total">R$ 0,00</span>
+                </div>
+                
+                <button class="btn btn-primary checkout-btn">FINALIZAR COMPRA</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Sample product data
+        const products = [
+            {
+                id: 1,
+                name: "Tênis Nike Air Max 270 - Masculino",
+                price: 499.90,
+                image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                discount: 125
+            },
+            {
+                id: 2,
+                name: "Tênis Adidas Ultraboost 22 - Feminino",
+                price: 699.90,
+                image: "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80",
+                discount: 0
+            },
+            {
+                id: 3,
+                name: "Camiseta Dry-Fit Nike Dri-FIT Academy",
+                price: 119.90,
+                image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=698&q=80",
+                discount: 50
+            },
+            {
+                id: 4,
+                name: "Bola de Basquete Spalding NBA Official Game",
+                price: 249.90,
+                image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+                discount: 100
+            }
+        ];
+        
+        // Cart functionality
+        let cart = [];
+        const cartOverlay = document.querySelector('.cart-overlay');
+        const cartIcon = document.querySelector('.cart-icon');
+        const closeCart = document.querySelector('.close-cart');
+        const cartItems = document.querySelector('.cart-items');
+        const cartCount = document.querySelector('.cart-count');
+        const subtotalElement = document.getElementById('subtotal');
+        const shippingElement = document.getElementById('shipping');
+        const discountElement = document.getElementById('discount');
+        const totalElement = document.getElementById('total');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        
+        // Open cart
+        cartIcon.addEventListener('click', () => {
+            cartOverlay.style.display = 'flex';
+            setTimeout(() => {
+                cartOverlay.classList.add('active');
+            }, 10);
+        });
+        
+        // Close cart
+        closeCart.addEventListener('click', () => {
+            cartOverlay.classList.remove('active');
+            setTimeout(() => {
+                cartOverlay.style.display = 'none';
+            }, 300);
+        });
+        
+        // Add to cart
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productId = parseInt(e.target.dataset.id);
+                const product = products.find(p => p.id === productId);
+                
+                if (product) {
+                    // Check if product is already in cart
+                    const existingItem = cart.find(item => item.id === productId);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({
+                            ...product,
+                            quantity: 1
+                        });
+                    }
+                    
+                    updateCart();
+                    cartOverlay.style.display = 'flex';
+                    setTimeout(() => {
+                        cartOverlay.classList.add('active');
+                    }, 10);
+                }
+            });
+        });
+        
+        // Update cart
+        function updateCart() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Clear cart items
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; padding: 30px;">Seu carrinho está vazio</p>';
+            } else {
+                // Add items to cart
+                cart.forEach(item => {
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.className = 'cart-item';
+                    cartItemElement.innerHTML = `
+                        <div class="cart-item-img">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">R$ ${item.price.toFixed(2)}</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                                <input type="text" class="quantity-input" value="${item.quantity}" readonly>
+                                <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                                <button class="remove-item" data-id="${item.id}"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItemElement);
+                });
+                
+                // Add event listeners to quantity buttons
+                document.querySelectorAll('.decrease').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = parseInt(e.target.dataset.id);
+                        const item = cart.find(item => item.id === id);
+                        
+                        if (item.quantity > 1) {
+                            item.quantity -= 1;
+                            updateCart();
+                        } else {
+                            cart = cart.filter(item => item.id !== id);
+                            updateCart();
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('.increase').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = parseInt(e.target.dataset.id);
+                        const item = cart.find(item => item.id === id);
+                        item.quantity += 1;
+                        updateCart();
+                    });
+                });
+                
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = parseInt(e.target.dataset.id);
+                        cart = cart.filter(item => item.id !== id);
+                        updateCart();
+                    });
+                });
+            }
+            
+            // Calculate totals
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const discount = cart.reduce((total, item) => total + (item.discount * item.quantity), 0);
+            const shipping = subtotal > 299 ? 0 : 19.90;
+            const total = subtotal - discount + shipping;
+            
+            // Update totals
+            subtotalElement.textContent = `R$ ${subtotal.toFixed(2)}`;
+            discountElement.textContent = `- R$ ${discount.toFixed(2)}`;
+            shippingElement.textContent = `R$ ${shipping.toFixed(2)}`;
+            totalElement.textContent = `R$ ${total.toFixed(2)}`;
+        }
+        
+        // Countdown timer
+        function updateCountdown() {
+            const daysElement = document.getElementById('days');
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+            
+            let days = parseInt(daysElement.textContent);
+            let hours = parseInt(hoursElement.textContent);
+            let minutes = parseInt(minutesElement.textContent);
+            let seconds = parseInt(secondsElement.textContent);
+            
+            seconds--;
+            
+            if (seconds < 0) {
+                seconds = 59;
+                minutes--;
+                
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                    
+                    if (hours < 0) {
+                        hours = 23;
+                        days--;
+                        
+                        if (days < 0) {
+                            // Reset timer when it reaches 0
+                            days = 2;
+                            hours = 12;
+                            minutes = 45;
+                            seconds = 30;
+                        }
+                    }
+                }
+            }
+            
+            daysElement.textContent = days.toString().padStart(2, '0');
+            hoursElement.textContent = hours.toString().padStart(2, '0');
+            minutesElement.textContent = minutes.toString().padStart(2, '0');
+            secondsElement.textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        
+        // Newsletter form
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input').value;
+            alert(`Obrigado por se inscrever com o e-mail: ${email}`);
+            newsletterForm.reset();
+        });
+    </script>
+</body>
+</html>
